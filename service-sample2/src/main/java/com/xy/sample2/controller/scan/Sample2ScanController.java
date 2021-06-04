@@ -6,7 +6,7 @@ import com.sc.common.dto.PageDto;
 import com.sc.common.enums.JsonResultEnum;
 import com.sc.common.utils.AssertUtils;
 import com.sc.common.vo.JsonResult;
-import com.xy.sample2.api.SampleServiceApi;
+import com.xy.sample.api.SampleServiceApi;
 import com.xy.sample2.dto.Sample2ScanAddDto;
 import com.xy.sample2.entity.scan.Sample2Scan;
 import com.xy.sample2.service.scan.Sample2ScanService;

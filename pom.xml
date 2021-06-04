@@ -46,6 +46,8 @@
         <service-sample2-service.version>1.0.0</service-sample2-service.version>
         <service-sample2-business.version>1.0.0</service-sample2-business.version>
         <service-sample2.version>1.0.0</service-sample2.version>
+
+        <service-sample-api.version>1.0.0</service-sample-api.version>
     </properties>
 
     <dependencyManagement>
@@ -84,6 +86,13 @@
                 <groupId>com.xy</groupId>
                 <artifactId>service-sample2-business</artifactId>
                 <version>${service-sample2-business.version}</version>
+            </dependency>
+
+            <!-- service-sample-api -->
+            <dependency>
+                <groupId>com.xy</groupId>
+                <artifactId>service-sample-api</artifactId>
+                <version>${service-sample-api.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

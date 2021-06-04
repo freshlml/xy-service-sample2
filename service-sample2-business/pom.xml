@@ -24,9 +24,10 @@
             <groupId>com.xy</groupId>
             <artifactId>service-sample2-service</artifactId>
         </dependency>
+
         <dependency>
             <groupId>com.xy</groupId>
-            <artifactId>service-sample2-api</artifactId>
+            <artifactId>service-sample-api</artifactId>
         </dependency>
     </dependencies>
 
