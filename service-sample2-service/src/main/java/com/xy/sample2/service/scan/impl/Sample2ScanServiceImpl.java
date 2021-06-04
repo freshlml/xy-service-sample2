@@ -2,8 +2,8 @@ package com.xy.sample2.service.scan.impl;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.sc.common.bo.scan.Sample2ScanBo;
-import com.sc.common.bo.scan.Sample2ScanPageBo;
+import com.xy.sample2.api.bo.Sample2ScanBo;
+import com.xy.sample2.api.bo.Sample2ScanPageBo;
 import com.xy.sample2.entity.scan.Sample2Scan;
 import com.xy.sample2.mapper.scan.Sample2ScanMapper;
 import com.xy.sample2.service.scan.Sample2ScanService;

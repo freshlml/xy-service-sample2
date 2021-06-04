@@ -68,10 +68,12 @@ public class Sample2ScanController {
         return JsonResult.buildSuccessResult(result);
     }
 
-    @GetMapping("getByIdRpc")
-    public JsonResult getByIdRpc(@RequestParam(name = "id", required = false) Long id) {
 
-        JsonResult result = sampleServiceApi.rpcGetById(id);
+    //from sample
+    @GetMapping("getByIdFromSample")
+    public JsonResult getByIdFromSample(@RequestParam(name = "id", required = false) Long id) {
+
+        JsonResult result = sampleServiceApi.getById(id);
         return result;
     }
 

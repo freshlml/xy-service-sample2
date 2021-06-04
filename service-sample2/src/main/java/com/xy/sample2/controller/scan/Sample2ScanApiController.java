@@ -3,20 +3,19 @@ package com.xy.sample2.controller.scan;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.google.common.collect.Lists;
-import com.sc.common.bo.scan.Sample2ScanAddBo;
-import com.sc.common.bo.scan.Sample2ScanBo;
-import com.sc.common.bo.scan.Sample2ScanPageBo;
 import com.sc.common.enums.JsonResultEnum;
 import com.sc.common.enums.ScanTypeEnum;
 import com.sc.common.utils.AssertUtils;
 import com.sc.common.vo.JsonResult;
+import com.xy.sample2.api.bo.Sample2ScanAddBo;
+import com.xy.sample2.api.bo.Sample2ScanBo;
+import com.xy.sample2.api.bo.Sample2ScanPageBo;
 import com.xy.sample2.entity.scan.Sample2Scan;
 import com.xy.sample2.service.scan.Sample2ScanService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
-
 import javax.validation.Valid;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -27,8 +26,8 @@ import java.util.stream.Collectors;
  */
 @Slf4j
 @RestController
-@RequestMapping("/sample2ScanRpc/")
-public class Sample2ScanRpcController {
+@RequestMapping("/sample2ScanApi/")
+public class Sample2ScanApiController {
 
     @Autowired
     private Sample2ScanService sample2ScanService;

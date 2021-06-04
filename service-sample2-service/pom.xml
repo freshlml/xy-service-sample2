@@ -24,6 +24,7 @@
             <groupId>com.xy</groupId>
             <artifactId>service-sample2-dal</artifactId>
         </dependency>
+
     </dependencies>
 
 

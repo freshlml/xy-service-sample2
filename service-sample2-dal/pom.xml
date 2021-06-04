@@ -31,5 +31,10 @@
             <artifactId>service-sample2-common</artifactId>
         </dependency>
 
+        <!-- service-sample2-api -->
+        <dependency>
+            <groupId>com.xy</groupId>
+            <artifactId>service-sample2-api</artifactId>
+        </dependency>
     </dependencies>
 </project>
