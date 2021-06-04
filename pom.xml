@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <modules>
+        <module>service-sample2-common</module>
+        <module>service-sample2-dal</module>
+        <module>service-sample2-service</module>
+        <module>service-sample2-api</module>
+        <module>service-sample2-business</module>
+        <module>service-sample2</module>
+    </modules>
+
+    <parent>
+        <groupId>com.xy</groupId>
+        <artifactId>xy-common-dependencies</artifactId>
+        <version>1.0.0</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>com.xy</groupId>
+    <artifactId>xy-service-sample2</artifactId>
+    <!-- 当前版本号1.0.0，如果1.0.0稳定后，继续开发1.0.1，则将版本号改成1.0.1 -->
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>xy-service-sample2</name>
+    <description>xy-service-sample2</description>
+    <url>https://www.github.com/freshlml/xy-service-sample2</url>
+    <scm>
+        <url>https://www.github.com/freshlml/xy-service-sample2</url>
+    </scm>
+
+
+    <properties>
+        <!-- 当前版本号是1.0.0，如果1.0.0稳定后，继续开发1.0.1,则此处将下面的版本号改成1.0.1
+        则依赖的common将是1.0.1
+        sample2-common
+        sample2-dao
+        sample2-api
+        service-sample2 将是1.0.1 -->
+        <xy-common.version>1.0.0</xy-common.version>
+        <service-sample2-common.version>1.0.0</service-sample2-common.version>
+        <service-sample2-dal.version>1.0.0</service-sample2-dal.version>
+        <service-sample2-api.version>1.0.0</service-sample2-api.version>
+        <service-sample2-service.version>1.0.0</service-sample2-service.version>
+        <service-sample2-business.version>1.0.0</service-sample2-business.version>
+        <service-sample2.version>1.0.0</service-sample2.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.xy</groupId>
+                <artifactId>xy-common</artifactId>
+                <version>${xy-common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xy</groupId>
+                <artifactId>service-sample2-common</artifactId>
+                <version>${service-sample2-common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xy</groupId>
+                <artifactId>service-sample2-dal</artifactId>
+                <version>${service-sample2-dal.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xy</groupId>
+                <artifactId>service-sample2-api</artifactId>
+                <version>${service-sample2-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xy</groupId>
+                <artifactId>service-sample2-api</artifactId>
+                <version>${service-sample2-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xy</groupId>
+                <artifactId>service-sample2-service</artifactId>
+                <version>${service-sample2-service.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.xy</groupId>
+                <artifactId>service-sample2-business</artifactId>
+                <version>${service-sample2-business.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
