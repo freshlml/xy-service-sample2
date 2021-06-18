@@ -3,8 +3,10 @@ package com.xy.sample2.entity.scan;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.sc.common.entity.BaseEntity;
 import com.sc.common.enums.ScanTypeEnum;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -13,6 +15,8 @@ import java.time.LocalDateTime;
 @Data
 @Builder
 @Accessors(chain = true)
+@NoArgsConstructor
+@AllArgsConstructor
 public class Sample2Scan extends BaseEntity<Long> {
     private String name;
     private ScanTypeEnum scanType;
