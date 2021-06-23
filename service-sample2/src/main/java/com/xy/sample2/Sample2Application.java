@@ -13,10 +13,10 @@ import org.springframework.retry.annotation.EnableRetry;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@ComponentScan(basePackages = {"com.xy", "com.sc"}, excludeFilters = {@ComponentScan.Filter(type= FilterType.ASSIGNABLE_TYPE, classes = {RmqTxServiceImpl.class})})
+@ComponentScan(basePackages = {"com.xy.sample2", "com.sc.common", "com.xy.sample.api"}, excludeFilters = {@ComponentScan.Filter(type= FilterType.ASSIGNABLE_TYPE, classes = {RmqTxServiceImpl.class})})
 @EnableCircuitBreaker
 @EnableHystrixDashboard
-@EnableFeignClients("com.xy")
+@EnableFeignClients({"com.xy.sample.api"})
 @EnableRetry
 public class Sample2Application {
 
