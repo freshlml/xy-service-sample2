@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fresh.xy.sample2.mapper.scan.Sample2ScanMapper">
+
+    <select id="selectByPojo" resultType="com.fresh.xy.sample2.api.bo.Sample2ScanBo">
+        select id, `name`, scan_type, scan_time
+        from sample2_scan
+        where 1=1
+        <if test="scanPageBo.id != null and scanPageBo.id != ''">
+            and id = #{scanPageBo.id}
+        </if>
+        <if test="scanPageBo.name != null and scanPageBo.name != ''">
+            and `name` like "%"#{scanPageBo.name}"%"
+        </if>
+        <if test="scanPageBo.scanType != null"> <!-- scanType is Enum ; can not scanPageBo.scanType != '' -->
+            and scan_type = #{scanPageBo.scanType}
+        </if>
+        <if test="scanPageBo.scanTime != null"> <!-- scanTime is LocalDateTime ; can not scanPageBo.scanTime != '' -->
+            and scan_time > #{scanPageBo.scanTime}
+        </if>
+    </select>
+
+</mapper>
