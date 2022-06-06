@@ -4,8 +4,8 @@ package com.fresh.xy.sample2.controller.redis;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fresh.common.result.JsonResult;
 import com.fresh.xy.redis.config.FlCustomSerializer;
-import com.fresh.xy.redis.dto.Pojo2RedisDto;
-import com.fresh.xy.redis.enums.PojoDtoEnum;
+import com.fresh.xy.redis.dto.ForTestPojo2RedisDto;
+import com.fresh.xy.redis.enums.ForRedisTestPojoDtoEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -84,7 +84,7 @@ public class Sample2RedisTestController {
 
 
         byte[] enumBytes = genericRedisTemplate.opsForValue().get("Enum");//从redis取出，保存为 byte[]
-        PojoDtoEnum enumVal = PojoDtoEnum.getByValue(flCustomSerializer.deserialize(enumBytes, String.class));//反序列化并使用该String构造Enum
+        ForRedisTestPojoDtoEnum enumVal = ForRedisTestPojoDtoEnum.getByValue(flCustomSerializer.deserialize(enumBytes, String.class));//反序列化并使用该String构造Enum
 
 
         byte[] localDateTimeBytes = genericRedisTemplate.opsForValue().get("LocalDateTime");//从redis取出，保存为 byte[]
@@ -117,14 +117,14 @@ public class Sample2RedisTestController {
         Long hashKey5Val = flCustomSerializer.deserialize(hashKey5, Long.class);//反序列化为 Long
 
 
-        Pojo2RedisDto pojo2RedisDto = Pojo2RedisDto.builder()
+        ForTestPojo2RedisDto pojo2RedisDto = ForTestPojo2RedisDto.builder()
                 .id(1234534535354L)
                 .bl(false)
                 .s(null)
                 .name("just pojo哒哒哒")
                 .bi(bi)
                 .bd(bd)
-                .pojoType(PojoDtoEnum.SYSTEM.getValue())
+                .pojoType(ForRedisTestPojoDtoEnum.SYSTEM.getValue())
                 .pojoTime(LocalDateTime.now())
                 .build();
         //1.序列化Pojo为 byte[]
@@ -135,7 +135,7 @@ public class Sample2RedisTestController {
         //3.从redis取出，保存为byte[]
         byte[] result = genericRedisTemplate.opsForValue().get("Pojo");
         //4.反序列化为Pojo
-        Pojo2RedisDto pojoDe = flCustomSerializer.deserialize(result, Pojo2RedisDto.class);
+        ForTestPojo2RedisDto pojoDe = flCustomSerializer.deserialize(result, ForTestPojo2RedisDto.class);
 
 
         return JsonResult.buildSuccessResult(pojoDe);
