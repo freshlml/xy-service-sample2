@@ -49,7 +49,7 @@ public class Sample2ScanController {
 
     @GetMapping("list")
     public JsonResult list(PageDto pageDto) {
-        AssertUtils.ifNull(pageDto, () -> "分页参数不能为空", () -> JsonResultEnum.FAIL.getCode());
+        AssertUtils.notNull(pageDto, () -> "分页参数不能为空", () -> JsonResultEnum.FAIL.getCode());
         AssertUtils.ifTrue(pageDto.getPageSize()<0, () -> "pageSize不能为负数", () -> JsonResultEnum.FAIL.getCode());
 
         Page<Sample2Scan> pageParam = new Page<>();

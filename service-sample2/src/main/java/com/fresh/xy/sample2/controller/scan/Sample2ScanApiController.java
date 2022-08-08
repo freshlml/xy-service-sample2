@@ -60,7 +60,7 @@ public class Sample2ScanApiController {
     //Get请求的Enum中@JsonCreator
     @GetMapping("listByPojo")
     public JsonResult listByPojo(Sample2ScanPageBo scanPageBo) {
-        AssertUtils.ifNull(scanPageBo, () -> "查询参数不能为空", () -> JsonResultEnum.FAIL.getCode());
+        AssertUtils.notNull(scanPageBo, () -> "查询参数不能为空", () -> JsonResultEnum.FAIL.getCode());
         AssertUtils.ifTrue(scanPageBo.getPageSize()<0, () -> "pageSize不能为负数", () -> JsonResultEnum.FAIL.getCode());
         log.info("请求参数: {}", scanPageBo);
 
@@ -71,7 +71,7 @@ public class Sample2ScanApiController {
     //compare with listByPojo, Get请求将参数放在请求体，使用@RequestBody解析请求体参数
     @GetMapping("listByPojo2")
     public JsonResult listByPojo2(@RequestBody Sample2ScanPageBo scanPageBo) {
-        AssertUtils.ifNull(scanPageBo, () -> "查询参数不能为空", () -> JsonResultEnum.FAIL.getCode());
+        AssertUtils.notNull(scanPageBo, () -> "查询参数不能为空", () -> JsonResultEnum.FAIL.getCode());
         AssertUtils.ifTrue(scanPageBo.getPageSize()<0, () -> "pageSize不能为负数", () -> JsonResultEnum.FAIL.getCode());
 
         IPage<Sample2ScanBo> result = sample2ScanService.listByPojo(scanPageBo);
