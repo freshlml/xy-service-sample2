@@ -32,10 +32,10 @@
             <artifactId>xy-mybatisplus-starter</artifactId>
         </dependency>
 
-        <!-- service-sample2-api -->
+        <!-- xy-service-sample2-api -->
         <dependency>
             <groupId>com.fresh.xy</groupId>
-            <artifactId>service-sample2-api</artifactId>
+            <artifactId>xy-service-sample2-api</artifactId>
         </dependency>
     </dependencies>
 </project>

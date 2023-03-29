@@ -27,7 +27,7 @@
 
         <dependency>
             <groupId>com.fresh.xy</groupId>
-            <artifactId>service-sample-api</artifactId>
+            <artifactId>xy-service-sample-api</artifactId>
         </dependency>
     </dependencies>
 

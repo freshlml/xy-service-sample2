@@ -7,7 +7,6 @@
         <module>service-sample2-common</module>
         <module>service-sample2-dal</module>
         <module>service-sample2-service</module>
-        <module>service-sample2-api</module>
         <module>service-sample2-business</module>
         <module>service-sample2</module>
     </modules>
@@ -34,13 +33,14 @@
         <!-- 控制子module版本号,随着项目版本号的变动而变动 -->
         <service-sample2-common.version>1.0.0</service-sample2-common.version>
         <service-sample2-dal.version>1.0.0</service-sample2-dal.version>
-        <service-sample2-api.version>1.0.0</service-sample2-api.version>
         <service-sample2-service.version>1.0.0</service-sample2-service.version>
         <service-sample2-business.version>1.0.0</service-sample2-business.version>
         <service-sample2.version>1.0.0</service-sample2.version>
 
-        <!-- 、service-sample-api版本号 -->
-        <service-sample-api.version>1.0.0</service-sample-api.version>
+        <!-- xy-service-sample-api版本号 -->
+        <xy-service-sample-api.version>1.0.0</xy-service-sample-api.version>
+        <!-- xy-service-sample2-api版本号 -->
+        <xy-service-sample2-api.version>1.0.0</xy-service-sample2-api.version>
     </properties>
 
     <dependencyManagement>
@@ -57,11 +57,6 @@
             </dependency>
             <dependency>
                 <groupId>com.fresh.xy</groupId>
-                <artifactId>service-sample2-api</artifactId>
-                <version>${service-sample2-api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.fresh.xy</groupId>
                 <artifactId>service-sample2-service</artifactId>
                 <version>${service-sample2-service.version}</version>
             </dependency>
@@ -71,11 +66,17 @@
                 <version>${service-sample2-business.version}</version>
             </dependency>
 
-            <!-- service-sample-api -->
+            <!-- xy-service-sample-api -->
             <dependency>
                 <groupId>com.fresh.xy</groupId>
-                <artifactId>service-sample-api</artifactId>
-                <version>${service-sample-api.version}</version>
+                <artifactId>xy-service-sample-api</artifactId>
+                <version>${xy-service-sample-api.version}</version>
+            </dependency>
+            <!-- xy-service-sample2-api -->
+            <dependency>
+                <groupId>com.fresh.xy</groupId>
+                <artifactId>xy-service-sample2-api</artifactId>
+                <version>${xy-service-sample2-api.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
