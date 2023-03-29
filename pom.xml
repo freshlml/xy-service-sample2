@@ -15,7 +15,7 @@
     <parent>
         <groupId>com.fresh.xy</groupId>
         <artifactId>fresh-xy-starter</artifactId>
-        <version>1.0.0</version>  <!-- 此处引用的fresh-xy-starter版本号 -->
+        <version>1.0.0</version>
     </parent>
 
     <groupId>com.fresh.xy</groupId>
@@ -39,7 +39,7 @@
         <service-sample2-business.version>1.0.0</service-sample2-business.version>
         <service-sample2.version>1.0.0</service-sample2.version>
 
-        <!-- 此处引用的service-sample-api版本号 -->
+        <!-- 、service-sample-api版本号 -->
         <service-sample-api.version>1.0.0</service-sample-api.version>
     </properties>
 
