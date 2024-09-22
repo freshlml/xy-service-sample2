@@ -22,10 +22,10 @@ import java.util.List;
 @RequestMapping("/sample2RedisTest/")
 public class Sample2RedisTestController {
 
-    @Autowired
+    //@Autowired
     private RedisTemplate<String, byte[]> genericRedisTemplate;
 
-    @Autowired
+    //@Autowired
     private FlCustomSerializer flCustomSerializer;
 
     @PostMapping("setBytes")
