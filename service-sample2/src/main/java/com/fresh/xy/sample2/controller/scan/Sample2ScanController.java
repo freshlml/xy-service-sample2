@@ -2,9 +2,12 @@ package com.fresh.xy.sample2.controller.scan;
 
 import com.fresh.common.enums.JsonResultEnum;
 import com.fresh.common.result.JsonResult;
+import com.fresh.common.result.PageJsonResultVo;
 import com.fresh.common.utils.AssertUtils;
 import com.fresh.xy.common.dto.PageDto;
+import com.fresh.xy.mbp.utils.MybatisPlusPageUtils;
 import com.fresh.xy.sample.api.SampleServiceApi;
+import com.fresh.xy.sample.api.bo.SampleScanBo;
 import com.fresh.xy.sample2.dto.Sample2ScanAddDto;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -30,14 +33,14 @@ public class Sample2ScanController {
     private SampleServiceApi sampleServiceApi;
 
     @PostMapping("save")
-    public JsonResult save(@RequestBody @Valid Sample2ScanAddDto scanDto) {
+    public JsonResult<?> save(@RequestBody @Valid Sample2ScanAddDto scanDto) {
         Sample2Scan scan = Sample2Scan.builder().build().setName(scanDto.getName()).setScanType(scanDto.getScanType()).setScanTime(scanDto.getScanTime());
         sample2ScanService.save(scan);
         return JsonResult.buildSuccessResult("保存成功");
     }
 
     @GetMapping("get")
-    public JsonResult getById(Long id) {
+    public JsonResult<Sample2ScanVo> getById(Long id) {
         //AssertUtils.ifNull(id, () -> "id不能为空", () -> JsonResultEnum.FAIL.getCode());
         Sample2Scan scan = sample2ScanService.getById(id);
         Sample2ScanVo result = null;
@@ -48,7 +51,7 @@ public class Sample2ScanController {
     }
 
     @GetMapping("list")
-    public JsonResult list(PageDto pageDto) {
+    public JsonResult<PageJsonResultVo<Sample2Scan>> list(PageDto pageDto) {
         AssertUtils.notNull(pageDto, () -> "分页参数不能为空", () -> JsonResultEnum.FAIL.getCode());
         AssertUtils.ifTrue(pageDto.getPageSize()<0, () -> "pageSize不能为负数", () -> JsonResultEnum.FAIL.getCode());
 
@@ -57,11 +60,11 @@ public class Sample2ScanController {
         pageParam.setSize(pageDto.getPageSize());
         IPage<Sample2Scan> result = sample2ScanService.page(pageParam);
 
-        return JsonResult.buildSuccessResult(result);
+        return JsonResult.buildSuccessResult(MybatisPlusPageUtils.pageJsonResultVo(result));
     }
 
     @GetMapping("listAll")
-    public JsonResult listAll() {
+    public JsonResult<List<Sample2ScanVo>> listAll() {
         List<Sample2Scan> scanResult = sample2ScanService.list();
         List<Sample2ScanVo> result = scanResult.stream().map(scan -> Sample2ScanVo.builder().id(scan.getId()).name(scan.getName()).scanType(scan.getScanType()).scanTime(scan.getScanTime()).createTime(scan.getCreateTime()).modifyTime(scan.getModifyTime()).build()).collect(Collectors.toList());
 
@@ -71,9 +74,9 @@ public class Sample2ScanController {
 
     //from sample
     @GetMapping("getByIdFromSample")
-    public JsonResult getByIdFromSample(@RequestParam(name = "id", required = false) Long id) {
+    public JsonResult<SampleScanBo> getByIdFromSample(@RequestParam(name = "id", required = false) Long id) {
 
-        JsonResult result = sampleServiceApi.getById(id);
+        JsonResult<SampleScanBo> result = sampleServiceApi.getById(id);
         return result;
     }
 
