@@ -3,6 +3,7 @@ package com.fresh.xy.sample2.controller.scan;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.fresh.common.enums.JsonResultEnum;
+import com.fresh.common.exception.BizException;
 import com.fresh.common.result.JsonResult;
 import com.fresh.common.result.PageJsonResultVo;
 import com.fresh.common.utils.AssertUtils;
@@ -102,4 +103,10 @@ public class Sample2ScanApiController {
         return JsonResult.buildSuccessResult("保存成功");
     }
 
+    @PostMapping("save2")
+    public JsonResult<?> save2(@RequestBody @Valid Sample2ScanAddBo scanAddBo) {
+        Sample2Scan scan = Sample2Scan.builder().name(scanAddBo.getName()).scanType(scanAddBo.getScanType()).scanTime(scanAddBo.getScanTime()).build();
+        sample2ScanService.save(scan);
+        throw new BizException(() -> "失败", () -> "异常code");
+    }
 }
