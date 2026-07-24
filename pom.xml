@@ -18,14 +18,14 @@
     </parent>
 
     <groupId>com.fresh.xy</groupId>
-    <artifactId>xy-service-sample2-collects</artifactId>
+    <artifactId>xy-service-sample2-parent</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
-    <name>xy-service-sample2-collects</name>
-    <description>xy-service-sample2-collects</description>
-    <url>https://www.github.com/freshlml/xy-service-sample2-collects</url>
+    <name>xy-service-sample2-parent</name>
+    <description>xy-service-sample2-parent</description>
+    <url>https://www.github.com/freshlml/xy-service-sample2-parent</url>
     <scm>
-        <url>https://www.github.com/freshlml/xy-service-sample2-collects</url>
+        <url>https://www.github.com/freshlml/xy-service-sample2-parent</url>
     </scm>
 
 
